@@ -225,6 +225,7 @@ class _ModalBottomSheetState extends State<ModalBottomSheet>
     _bounceDragController.reverse();
       
     if(velocity <= _minFlingVelocity){
+       _cancelClose();
       return;
     }
 
