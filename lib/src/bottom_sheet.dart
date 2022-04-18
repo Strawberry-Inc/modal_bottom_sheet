@@ -213,6 +213,9 @@ class _ModalBottomSheetState extends State<ModalBottomSheet>
 
   void _handleDragEnd(double velocity) async {
     assert(widget.enableDrag, 'Dragging is disabled');
+    if(velocity <= _minFlingVelocity){
+      return;
+    }
 
     animationCurve = BottomSheetSuspendedCurve(
       widget.animationController.value,
